@@ -10,6 +10,10 @@ app.get("/",(req,res)=>{
 // WriteFile Sync
 fs.writeFileSync("./ds-b.tsxt","Hello ABES College Students");
 
+
+fs.writeFileSync("./Abes.txt","Hii ABES Students");
+const data=fs.readFileSync("./Abes.txt","utf-8");
+console.log(data);
 app.listen(PORT,()=>{
     console.log('Server is running on port '+PORT);
 })
