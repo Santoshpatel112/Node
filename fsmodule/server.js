@@ -99,7 +99,18 @@ fs.appendFileSync("./Abes.txt","\nSantosh Patel",()=>{
     // console.log("File Appended Successfully");
 });
 const appendAbes2=fs.readFileSync("./Abes.txt","utf-8");
-console.log(appendAbes2);
+// console.log(appendAbes2);
+
+
+
+// Copy data from one file to another
+
+fs.cpSync("./Abes.txt","./AbesCopy.txt");
+
+// copy Async
+fs.cp("./ds-b.txt","./ds-bcopy.txt",()=>{
+    // console.log("File Copied Successfully");
+})
 
 app.listen(PORT,()=>{
     console.log('Server is running on port '+PORT);
