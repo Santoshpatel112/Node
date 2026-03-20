@@ -1,6 +1,7 @@
 import express from "express";
 
 const app=express();
+app.use(express.json()); // parse JSON request bodies
 
 app.get("/",(req,res)=>{
     res.send("Hello World");
@@ -31,6 +32,15 @@ app.get("/read/:id",(req,res)=>{
     
 });
 
+// API for create data
+app.post("/add",(req,res)=>{
+    const newStudent={
+        id:student.length+1,
+        ...req.body
+    }
+    student.push(newStudent);
+    res.json({message :"Student added successfully", student:newStudent});
+})
 app.listen(3000,()=>{
     console.log("Server is running on port 3000");
 }); 
